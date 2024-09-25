@@ -13,7 +13,7 @@
         margin: auto;
         background-color: #f4f4f4; /* Light gray background */
         border: 2px solid #333; /* Darker border */
-        border-radius: 10px; /* Rounded corners */
+        border-radius: 15px; /* Rounded corners */
         padding: 20px; /* Spacing around the content */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     }
@@ -179,8 +179,8 @@
             scatter: {
                 marker: {
                     radius: 5,
-                    lineWidth: 0.5,
-                    lineColor: '#757575', 
+                    lineWidth: 1,
+                    lineColor: '#404040', 
                     states: {
                         hover: {
                             enabled: true,
