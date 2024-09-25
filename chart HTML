@@ -236,7 +236,15 @@ function runIt(f) {
           "platform": "Instagram",
           "Stopping Power": 58.62,
           "Staying Power": 56.28
-        }, {
+        },{
+          "platform": "Facebook",
+          "Stopping Power": 58.62,
+          "Staying Power": 56.28
+        },{
+          "platform": "YouTube Shorts",
+          "Stopping Power": 58.62,
+          "Staying Power": 56.28
+        },{
           "platform": "Tiktok",
           "Stopping Power": 58.62,
           "Staying Power": 56.28
@@ -333,10 +341,10 @@ runIt(data => {
             return check;
         }
 
-        const getData = platformName => {
+        const getData = Platform => {
             const temp = [];
             data.forEach(elm => {
-                if (elm.platform === platformName && checkFilters(elm))
+                if (elm.Platform === Platform && checkFilters(elm))
                 {
                     temp.push({
                         id: elm.Creator,
