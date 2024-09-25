@@ -37,7 +37,7 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-    <div id="filters" align="left">
+    <div id="filters" align="center">
         <div>
             <label for="Brand Category">Brand Category:</label>
             <select id="Brand Category">
