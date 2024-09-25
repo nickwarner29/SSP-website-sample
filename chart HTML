@@ -157,31 +157,33 @@ Highcharts.setOptions({
 });
 
 const series = [{
-    name: 'Instagram',
-    id: 'Instagram',
-    marker: {
-        symbol: 'circle'
-    }
-},
-{
-    name: 'Tiktok',
-    id: 'Tiktok',
-    marker: {
-        symbol: 'triangle'
+        name: 'Instagram',
+        id: 'Instagram',
+        marker: {
+            symbol: 'circle'
+        }
     },
-{
-    name: 'Facebook',
-    id: 'Facebook',
-    marker: {
-        symbol: 'square'
+    {
+        name: 'Tiktok',
+        id: 'Tiktok',
+        marker: {
+            symbol: 'triangle'
+        }
     },
-{
-    name: 'YouTube Shorts',
-    id: 'YouTube Shorts',
-    marker: {
-        symbol: 'diamond'
-    }
-}];
+    {
+        name: 'Facebook',
+        id: 'Facebook',
+        marker: {
+            symbol: 'square'
+        }
+    },
+    {
+        name: 'YouTube Shorts',
+        id: 'YouTube Shorts',
+        marker: {
+            symbol: 'diamond'
+        }
+    }];
 
 const filters = [
     {
@@ -348,8 +350,8 @@ runIt(data => {
                 {
                     temp.push({
                         id: elm.Creator,
-                        x: elm.Staying Power,
-                        y: elm.Sopping Power,
+                        x: elm["Staying Power"],
+                        y: elm["Stopping Power"],
                         custom: elm                  
                     });
                 }
@@ -400,6 +402,4 @@ runIt(data => {
 }
 );
 
-  </script>
-
-</html>
+    </script>
