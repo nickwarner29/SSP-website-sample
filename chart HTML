@@ -111,25 +111,25 @@
 
 <div id="filters" align="center">
     <div>
-    <label for="brand_category">Brand Category:</label>
-    <select id="brand_category">
+    <label for="Brand Category">Brand Category:</label>
+    <select id="Brand Category">
         <option selected value> -- all -- </option>
     </select>
 
-    <label for="campaign_name">Campaign Name:</label>
-    <select id="campaign_name">
+    <label for="Creator">Creator:</label>
+    <select id="Creator">
         <option selected value> -- all -- </option>
     </select>
 
-    <label for="main_brand">Main Brand:</label>
-    <select id="main_brand">
+    <label for="Brand Name">Brand Name:</label>
+    <select id="Brand Name">
         <option selected value> -- all -- </option>
     </select>
     </div>
 
     <div>
-    <label for="region">Region:</label>
-    <select id="region">
+    <label for="Country">Country:</label>
+    <select id="Country">
         <option selected value> -- all -- </option>
     </select>
 
@@ -168,6 +168,18 @@ const series = [{
     id: 'Tiktok',
     marker: {
         symbol: 'triangle'
+    },
+{
+    name: 'Facebook',
+    id: 'Facebook',
+    marker: {
+        symbol: 'square'
+    },
+{
+    name: 'YouTube Shorts',
+    id: 'YouTube Shorts',
+    marker: {
+        symbol: 'diamond'
     }
 }];
 
