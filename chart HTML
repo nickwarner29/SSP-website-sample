@@ -6,30 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style id="compiled-css" type="text/css">
-        #container {
-            max-width: 1280px;
-            max-height: 720px;
-            min-height: 600px;
-            margin: auto;
-        }
+    #container {
+        max-width: 1280px;
+        max-height: 720px;
+        min-height: 600px;
+        margin: auto;
+        background-color: #f4f4f4; /* Light gray background */
+        border: 2px solid #333; /* Darker border */
+        border-radius: 10px; /* Rounded corners */
+        padding: 20px; /* Spacing around the content */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    }
 
-        .highcharts-figure,
-        .highcharts-data-table table {
-            min-width: 360px;
-            max-width: 1440px;
-            min-height: 600px;
-            margin: 1em auto;
-        }
+    .highcharts-figure,
+    .highcharts-data-table table {
+        min-width: 360px;
+        max-width: 1440px;
+        min-height: 600px;
+        margin: 1em auto;
+    }
 
-        /* ... (keep other existing styles) ... */
-
-        #filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-    </style>
+    #filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+</style>
   </head>
   <body>
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -127,7 +130,7 @@
             }
         },
         title: {
-            text: 'SSP-Sample',
+            text: 'SSP - Sample',
             align: 'left'
         },
         subtitle: {
@@ -135,16 +138,39 @@
             align: 'left'
         },
         xAxis: {
-            title: { text: 'Staying Power' },
+            title: { 
+              text: 'Staying Power',
+              style: {
+                  color: '#00a0ff',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  fontFamily: 'Poppins'
+              }
+            },
             labels: { format: '{value}' },
             min: 0,
-            max: 100
+            max: 100,
+            tickInterval: 10,
+            gridLineWidth: 1,
+            gridLineColor: '#e6e6e6',
+            tickmarkPlacement: 'on',
         },
         yAxis: {
-            title: { text: 'Stopping Power' },
+            title: { text: 'Stopping Power',
+              style: {
+                  color: '#ff2198',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  fontFamily: 'Poppins'
+              }
+            },
             labels: { format: '{value}' },
             min: 0,
-            max: 100
+            max: 100,
+            tickInterval: 10,
+            gridLineWidth: 1,
+            gridLineColor: '#e6e6e6',
+            tickmarkPlacement: 'on',
         },
         legend: {
             enabled: true
@@ -153,6 +179,8 @@
             scatter: {
                 marker: {
                     radius: 5,
+                    lineWidth: 0.5,
+                    lineColor: '#757575', 
                     states: {
                         hover: {
                             enabled: true,
