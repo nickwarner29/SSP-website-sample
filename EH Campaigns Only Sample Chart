@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Element Human - SSP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #container {
+            max-width: 1280px;
+            max-height: 720px;
+            min-height: 600px;
+            margin: auto;
+            background-color: #f4f4f4;
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <div id="container"></div>
+
+    <script type="text/javascript">
+        Highcharts.setOptions({
+            colors: [
+                'rgba(5,141,199,0.5)', 'rgba(80,180,50,0.5)', 'rgba(237,86,27,0.5)', 'rgba(210,105,30,0.5)'
+            ]
+        });
+
+        const series = [
+            { name: 'Instagram', id: 'Instagram', marker: { symbol: 'circle' }, data: [] },
+            { name: 'TikTok', id: 'TikTok', marker: { symbol: 'triangle' }, data: [] },
+            { name: 'Facebook', id: 'Facebook', marker: { symbol: 'square' }, data: [] },
+            { name: 'YouTube Shorts', id: 'YouTube Shorts', marker: { symbol: 'diamond' }, data: [] }
+        ];
+
+        const data = [
+            {"Brand Category": "Beauty and Personal Care", "Brand Name": "E.L.F Cosmetics", "Country": "US", "Platform": "TikTok", "Stopping Power": 27.91, "Staying Power": 54.69, "Month-Year": "2024-10"},
+            {"Brand Category": "Beauty and Personal Care", "Brand Name": "E.L.F Cosmetics", "Country": "US", "Platform": "TikTok", "Stopping Power": 23.65, "Staying Power": 64.08, "Month-Year": "2024-10"},
+            {"Brand Category": "Beauty and Personal Care", "Brand Name": "E.L.F Cosmetics", "Country": "US", "Platform": "TikTok", "Stopping Power": 80.23, "Staying Power": 75.84, "Month-Year": "2024-10"},
+            {"Brand Category": "Beauty and Personal Care", "Brand Name": "E.L.F Cosmetics", "Country": "US", "Platform": "TikTok", "Stopping Power": 48.56, "Staying Power": 67.08, "Month-Year": "2024-10"},
+            {"Brand Category": "Charity", "Brand Name": "Walking 4 Hope", "Country": "GB", "Platform": "Instagram", "Stopping Power": 42.42, "Staying Power": 52.45, "Month-Year": "2024-07"},
+            {"Brand Category": "Charity", "Brand Name": "Global Action Plan", "Country": "GB", "Platform": "Instagram", "Stopping Power": 54.52, "Staying Power": 74.87, "Month-Year": "2024-04"},
+            {"Brand Category": "Charity", "Brand Name": "CoorDown", "Country": "US", "Platform": "YouTube Shorts", "Stopping Power": 100.0, "Staying Power": 87.5, "Month-Year": "2024-03"},
+            {"Brand Category": "Charity", "Brand Name": "CoorDown", "Country": "US", "Platform": "TikTok", "Stopping Power": 95.24, "Staying Power": 84.86, "Month-Year": "2024-03"},
+            {"Brand Category": "Charity", "Brand Name": "Amnesty International", "Country": "GB", "Platform": "TikTok", "Stopping Power": 86.11, "Staying Power": 81.35, "Month-Year": "2024-03"},
+            {"Brand Category": "Charity", "Brand Name": "Amnesty International", "Country": "GB", "Platform": "Instagram", "Stopping Power": 86.3, "Staying Power": 88.53, "Month-Year": "2024-03"}
+        ];
+
+        const chart = Highcharts.chart('container', {
+            chart: {
+                type: 'scatter',
+                zooming: {
+                    type: 'xy'
+                }
+            },
+            title: {
+                text: 'SSP - Sample',
+                align: 'left'
+            },
+            subtitle: {
+                text: 'Source: <a href="https://www.elementhuman.com/">Element Human</a>',
+                align: 'left'
+            },
+            xAxis: {
+                title: {
+                    text: 'Staying Power',
+                    style: {
+                        color: '#00a0ff',
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        fontFamily: 'Poppins'
+                    }
+                },
+                labels: { format: '{value}' },
+                min: 0,
+                max: 100,
+                tickInterval: 10,
+                gridLineWidth: 1,
+                gridLineColor: '#e6e6e6',
+                tickmarkPlacement: 'on',
+            },
+            yAxis: {
+                title: {
+                    text: 'Stopping Power',
+                    style: {
+                        color: '#ff2198',
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        fontFamily: 'Poppins'
+                    }
+                },
+                labels: { format: '{value}' },
+                min: 0,
+                max: 100,
+                tickInterval: 10,
+                gridLineWidth: 1,
+                gridLineColor: '#e6e6e6',
+                tickmarkPlacement: 'on',
+            },
+            legend: {
+                enabled: true
+            },
+            plotOptions: {
+                scatter: {
+                    marker: {
+                        radius: 5,
+                        lineWidth: 1,
+                        lineColor: '#404040',
+                        states: {
+                            hover: {
+                                enabled: true,
+                                lineColor: 'rgb(100,100,100)'
+                            }
+                        }
+                    },
+                    states: {
+                        hover: {
+                            marker: {
+                                enabled: false
+                            }
+                        }
+                    },
+                    jitter: {
+                        x: 0.005
+                    }
+                }
+            },
+            tooltip: {
+                pointFormat: 'Brand Category: {point.custom["Brand Category"]}<br/>Brand Name: {point.custom["Brand Name"]}<br/>Platform: {point.custom["Platform"]}<br/>Staying Power: {point.x}<br/>Stopping Power: {point.y}'
+            },
+            series
+        });
+
+        function reload() {
+            const getData = Platform => {
+                return data.filter(elm => elm.Platform === Platform)
+                    .map(elm => ({
+                        id: elm["Brand Name"],
+                        x: elm["Staying Power"],
+                        y: elm["Stopping Power"],
+                        custom: elm
+                    }));
+            };
+
+            series.forEach((s, index) => {
+                const newData = getData(s.id);
+                chart.series[index].setData(newData, false);
+            });
+
+            chart.redraw();
+        }
+
+        // Load all data points
+        reload();
+    </script>
+</body>
+</html>
